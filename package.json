@@ -1,0 +1,25 @@
+{
+  "name": "nodesequelize",
+  "version": "1.0.0",
+  "description": "Integração Node e Sequelize",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "nodemon main.mjs localhost 3000"
+  },
+  "author": "Douglas",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5",
+    "tedious": "^18.6.1"
+  }
+}

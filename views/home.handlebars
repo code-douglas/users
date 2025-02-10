@@ -1,0 +1,21 @@
+<div class="bigger-container">
+  <h1>Usuários Cadastrados: </h1>
+  <div class="list-container">
+
+    {{#each users}}
+      <div class="item">
+        <h4>{{this.name}}</h4>
+        <div class="buttons">
+          <a href="/users/{{this.id}}" class="details-btn">
+            <i class="bi bi-eye"></i>
+          </a>
+          <form action="/users/delete/{{this.id}}" method="POST">
+            <button type="submit" class="remove-btn">
+              <i class="bi bi-trash"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
