@@ -24,4 +24,29 @@
     <input type="submit" value="Atualizar">
 
   </form>
+  <div class="address-container">
+    <form action="/address/create" method="post">
+      
+      <input type="hidden" name="UserId" value="{{user.id}}">
+
+      <div class="form-control">
+        <label for="street">Rua: </label>
+        <input type="text" name="street" id="street" placeholder="Digite o nome da sua rua...">
+      </div>
+
+      <div class="form-control">
+        <label for="number">Número</label>
+        <input type="text" name="number" id="number" placeholder="Digite o número da sua residencia...">
+      </div>
+
+      <div class="form-control">
+        <label for="city">Cidade</label>
+        <input type="text" name="city" id="city" placeholder="Digite a sua cidade...">
+      </div>
+
+      <input type="submit" value="Incluir endereço">
+
+    </form>
+  </div>
 </div>
+

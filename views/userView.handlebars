@@ -1,18 +1,36 @@
-<div class="user-details-container">
+<div class="user-details-container {{#if (gt user.Addresses.length 4)}}wide{{/if}}">
   <h2>Detalhes do Usuário</h2>
   <div class="user-details">
     <p><strong>Nome:</strong> <span id="user-profession">{{user.name}}</span></p>
     <p><strong>Ocupação:</strong> <span id="user-occupation">{{user.occupation}}</span></p>
+
+    <div class="address-cards {{#if (gt user.Addresses.length 4)}}more-than-4{{/if}}">
+      {{#each user.Addresses}}
+        <div class="address-card">
+          <p>Rua: <strong>{{this.street}}</strong></p>
+          <p>Cidade: <strong>{{this.city}}</strong></p>
+          <p>Número: <strong>{{this.number}}</strong></p>
+          <form action="/address/delete" method="POST" class="delete-form">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit" class="delete-button">
+              <i class="bi bi-trash"></i>
+            </button>
+          </form>
+        </div>
+      {{/each}}
+    </div>
   </div>
 
-  <a href="/">
-    <button id="back-home">
-      <i class="bi bi-house"></i>
-    </button>
-  </a>
-  <a href="/users/edit/{{user.id}}">
-    <button id="back-home">
-      <i class="bi bi-pencil-square"></i>
-    </button>
-  </a>
+  <div class="buttons-container">
+    <a href="/">
+      <button id="back-home">
+        <i class="bi bi-house"></i>
+      </button>
+    </a>
+    <a href="/users/edit/{{user.id}}">
+      <button id="back-home">
+        <i class="bi bi-pencil-square"></i>
+      </button>
+    </a>
+  </div>
 </div>

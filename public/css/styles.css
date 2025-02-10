@@ -62,7 +62,7 @@ body {
   width: 100%;
   max-width: 500px;
   text-align: left;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 form {
@@ -126,6 +126,86 @@ input[type="submit"]:hover {
   font-size: 16px;
   color: #333;
   cursor: pointer;
+}
+
+.user-details-container {
+  max-width: 600px; /* Começa com largura padrão */
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: max-width 0.3s ease-in-out;
+}
+
+/* GRID flexível para os endereços */
+.address-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 endereços por linha inicialmente */
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Se houver mais de 4 endereços, muda para 3 colunas */
+.address-cards.more-than-4 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* O container cresce quando tem mais endereços */
+.user-details-container.wide {
+  max-width: 800px;
+}
+
+.address-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.address-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Botão de deletar */
+.delete-button {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #c82333;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .address-cards {
+    grid-template-columns: repeat(2, 1fr); /* Mantém 2 por linha em telas menores */
+  }
+
+  .address-cards.more-than-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user-details-container.wide {
+    max-width: 100%;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  /* margin-top: 20px; */
 }
 
 .list-container {
