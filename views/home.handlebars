@@ -1,5 +1,9 @@
 <div class="bigger-container">
-  <h1>Usuários Cadastrados: </h1>
+  {{#if users.length}} 
+    <h1>Usuários cadastrados: </h1>
+  {{else}}
+    <h1>Sem usuários cadastrados</h1>
+  {{/if}}
   <div class="list-container">
 
     {{#each users}}
@@ -10,9 +14,9 @@
             <i class="bi bi-eye"></i>
           </a>
           <form action="/users/delete/{{this.id}}" method="POST">
-            <button type="submit" class="remove-btn">
+            <a class="remove-btn">
               <i class="bi bi-trash"></i>
-            </button>
+            </a>
           </form>
         </div>
       </div>
